@@ -24,7 +24,7 @@ param(
 
 begin {
     # install/import Pester module
-    if ($null -eq (Get-Module -ListAvailable -Name Pester)) { Write-Output "Installing Pester module..."; Install-Module -Name Pester -Scope CurrentUser -SkipPublisherCheck } else { Write-Verbose "Pester module already installed." -Verbose; Import-Module -Name Pester }
+    if ($null -eq (Get-Module -ListAvailable -Name Pester)) { Write-Output "Installing Pester module..."; Set-PSRepository PSGallery -InstallationPolicy Trusted; Install-Module -Name Pester -Scope CurrentUser -SkipPublisherCheck } else { Write-Verbose "Pester module already installed." -Verbose; Import-Module -Name Pester }
     
     # create pester configuration object using doc here: https://pester-docs.netlify.app/docs/commands/New-PesterConfiguration
     $config = New-PesterConfiguration

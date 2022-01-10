@@ -16,7 +16,7 @@ param() # needed to prevent suppression message attribute from causing error
 
 begin {
     # install/import PSScriptAnalyzer module
-    if ($null -eq (Get-Module -ListAvailable -Name PSScriptAnalyzer)) { Write-Output "Installing PSScriptAnalyzer module..."; Install-Module -Name PSScriptAnalyzer -Scope CurrentUser } else { Write-Verbose "PSScriptAnalyzer module already installed." -Verbose; Import-Module -Name PSScriptAnalyzer }
+    if ($null -eq (Get-Module -ListAvailable -Name PSScriptAnalyzer)) { Write-Output "Installing PSScriptAnalyzer module..."; Set-PSRepository PSGallery -InstallationPolicy Trusted; Install-Module -Name PSScriptAnalyzer -Scope CurrentUser } else { Write-Verbose "PSScriptAnalyzer module already installed." -Verbose; Import-Module -Name PSScriptAnalyzer }
     
     $pssaSettingsFile = './PSScriptAnalyzerSettings.psd1'
     if ((Test-Path $pssaSettingsFile) -eq $false) { throw "PS Script Analyzer settings not found at $pssaSettingsFile" }
