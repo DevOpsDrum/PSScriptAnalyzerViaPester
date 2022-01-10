@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+# reference: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-powershell
+
+name: CI
+
+# Controls when the workflow will run
+on: push
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  pester-test:
+    name: Pester-PSScriptAnalyzer Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
+      - name: Run Pester-PSScriptAnalyzer Test
+        shell: pwsh
+        run: |
+          ./Invoke-Pester.ps1
+          
+      - name: Confirm output file present
+        shell: pwsh
+        run: |
+          Test-Path ./output/psscriptanalyzer-nunit.xml | Should -Be $true
