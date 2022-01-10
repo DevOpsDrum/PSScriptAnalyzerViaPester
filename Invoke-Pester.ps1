@@ -17,7 +17,9 @@
 [CmdletBinding()]
 param(
     [string] $OutputFile = './output/psscriptanalyzer-nunit.xml',
-    [string] $PesterTestsPath = './PSScriptAnalyzer.tests.ps1'
+    [string] $PesterTestsPath = './PSScriptAnalyzer.tests.ps1',
+    [ValidateSet('NUnitXML', 'JUnitXMl')] # only 2 formats supported by Pester
+    [string] $OutputFormat = 'NUnitXML'
 )
 
 begin {
@@ -28,7 +30,7 @@ begin {
     $config = New-PesterConfiguration
     $config.Run.Path = $PesterTestsPath
     $config.TestResult.Enabled = $true
-    $config.TestResult.OutputFormat = 'NUnitXml' # this is the default value, but setting explicitely for visibility
+    $config.TestResult.OutputFormat = $OutputFormat # default is NUnitXML
     $config.TestResult.OutputPath = $OutputFile
     $config.Output.Verbosity = 'Detailed' # 'Diagnostic'
 }

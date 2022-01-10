@@ -1,9 +1,7 @@
 # PSScriptAnalyzer and Pester
-This repo serves as an example of how to use Pester to generate NUnit XML from PSScriptAnalyzer output. The output is published as part of the pipeline (PR/CI).
+PSScriptAnalyzer is used to `lint` PowerShell scripts, which means to check for programmatic and stylistic issues. It is good practice to perform these checks on a regular basis and in an automated fashion, like when checking into code or on pull requests into your main branch.
 
-I use this method to validate that PowerShell scripts/modules in repos conform to a set of formatting rules when the pipeline runs. This validation helps the variety of folks working with the scripts by keeping a level of consistent over time.
-
-> This hack is necessary due to PSScriptAnalyzer not supporting NUnitXML as an output, and NUnitXML is the format needed to publish test results in an Azure DevOps pipeline.
+The objective of this repo is to serve as example of how to lint PowerShell scripts in a repo as part of a CI/CD pipeline and publish those results in NUnit XML format (a standard test report format). Since PSScriptAnalyzer does not have the capability to produce NUnit XML, Pester is used to meet this requirement. Is is not as straight forward as I originally thought use Pester for this purpose as many examples available are **not** compatible with Pester 5, so this repo was created to serve as an example resource for myself and others. 
 
 ---
 
@@ -22,11 +20,6 @@ The workflow is:
 
 ---
 
-## General Pester info
-* `DAMP` (or `Descriptive and Meaningful Phrases`) should be used to name tests, i.e. the test names should be *readable*. 
-
----
-
 ## Non-working examples
 > A quick rant on the terrible non-working examples I have wasted time on
 
@@ -35,3 +28,10 @@ The available examples of how to use Pester with PSScriptAnalyzer this were writ
 There is a disturbing lack of working examples out there, I can only assume because so few people actually use PSScriptAnalyzer, but hopefully this repo will help the bold few who want to increase the consistency of the scripts they write. 
 
 I found [this thread](https://github.com/pester/Pester/issues/1564), with folks discussing their issues and resolutions, very helpful.
+
+---
+
+## TODO
+* Add some examples of PowerShell scripts and legit Pester tests, not just linting with PSScriptAnalyzer
+* Create separate doc for Pester notes and include this:
+  * `DAMP` (or `Descriptive and Meaningful Phrases`) should be used to name tests, i.e. the test names should be *readable*. 
