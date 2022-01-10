@@ -18,6 +18,11 @@ The workflow is:
 
 > This example uses Pester's [data driven tests model](https://pester-docs.netlify.app/docs/usage/data-driven-tests)
 
+### bad-script.ps1
+The `./bad-script.ps1` file has a example of a script that will fail the lint/PSScriptAnalyzer test due to the use of an alias `echo` instead of the full function name `Write-Output`. 
+
+A GitHub action is triggered on push and it fails due to the `./bad-script.ps1` file. To get the action to complete successfully, I have commented out the "bad" command and added the proper version below, so the test completes successfully now.
+
 ---
 
 ## Non-working examples
