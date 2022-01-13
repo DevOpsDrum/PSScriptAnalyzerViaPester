@@ -1,4 +1,4 @@
-# PSScriptAnalyzer and Pester
+# PSScriptAnalyzer via Pester
 PSScriptAnalyzer is used to `lint` PowerShell scripts, which means to check for programmatic and stylistic issues. It is good practice to perform these checks on a regular basis and in an automated fashion, like when checking in code or on pull requests.
 
 The objective of this repo is to serve as example of how to lint PowerShell scripts in a repo as part of a CI/CD pipeline and publish those results in NUnit XML format (a standard test report format). Since PSScriptAnalyzer does not have the capability to produce NUnit XML, Pester is used to meet this requirement. Is is not as straight forward as I originally thought use Pester for this purpose as many examples available are **not** compatible with Pester 5, so this repo was created to serve as an example resource for myself and others. 
