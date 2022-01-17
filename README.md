@@ -6,7 +6,14 @@ The objective of this repo is to serve as example of how to lint PowerShell scri
 ---
 
 ## Getting Started
-This repo implements dev containers
+This repo implements [dev containers](https://code.visualstudio.com/docs/remote/containers-tutorial), with recommended extensions and settings for working with this project. 
+
+> Note: Only the prescribed extensions will be loaded, but your user settings will override the project settings if there is overlap.
+
+To run the prescribed dev container:
+* Press `F1` to open command pallet
+* Type: `Remote-Containers: Open Folder in Container`, and select the option
+* Select the repo folder: `PSScriptAnalyzerViaPester`, and the container will load in a minute or so. 
 
 ---
 
