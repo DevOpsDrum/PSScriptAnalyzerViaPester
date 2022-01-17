@@ -42,7 +42,7 @@ process {
     # call Pester `Invoke-Pester` function, which will run PSScriptAnalyzer tests in script set in var: $PesterTestsPath
     Invoke-Pester -Configuration $config
 
-    Write-Output "`nPester $OutputFormat report: $OutputFile`n"
+    Write-Output "`n📊 Pester $OutputFormat report: $OutputFile`n"
 }
 
 end {}

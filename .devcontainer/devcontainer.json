@@ -11,6 +11,7 @@
         "ms-vscode.powershell",
         "ms-azure-devops.azure-pipelines",
         "ms-dotnettools.csharp",
+        "docsmsft.docs-markdown",
         "DavidAnson.vscode-markdownlint",
         "yzhang.markdown-all-in-one",
         "vitaliymaz.vscode-svg-previewer",
