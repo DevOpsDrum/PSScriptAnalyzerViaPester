@@ -5,6 +5,7 @@
     Run PSScriptAnalyzer on all PS files in working folder, then use Pester to generate proper test output
 .NOTES
     PSScriptAnalyzer does not output NUnit XML, so Pester is used to generate that report
+    ~Script like a champion today~
 .LINK
     https://github.com/DevOpsDrum/PSScriptAnalyzer
 #>
@@ -53,6 +54,7 @@ process {
     Describe 'PSScriptAnalyzer' {
         Context 'OTBS (K&R) and PSGallery Formatting' {
             It "Should not get results for rule: <_.rule>" -TestCases $testCases {
+                # if record is null, the test passed
                 $_.record | Should -BeNullOrEmpty
             }
         }

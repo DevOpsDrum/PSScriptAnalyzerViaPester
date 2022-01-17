@@ -5,9 +5,14 @@ The objective of this repo is to serve as example of how to lint PowerShell scri
 
 ---
 
+## Getting Started
+This repo implements dev containers
+
+---
+
 ## Overview
 The workflow is: 
-* Working from the root of this repo, run script: `./Invoke-Pester.ps1`
+* Working from the root of this repo, run script: `./Invoke-PSScriptAnalyzerViaPester.ps1`
    * This script will set Pester configuration options and have Pester run on the test file for PSScriptAnalyzer: `PSScriptAnalyzer.tests.ps1`
 * The `PSScriptAnalyzer.tests.ps1` file will
    * Get the rules defined in the settings file: `./PSScriptAnalyzerSettings.psd1`

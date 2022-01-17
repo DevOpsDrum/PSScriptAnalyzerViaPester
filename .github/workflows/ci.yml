@@ -9,17 +9,17 @@ on: push
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   pester-test:
-    name: Pester-PSScriptAnalyzer Test
+    name: PSScriptAnalyzer via Pester
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-
-      - name: Run Pester-PSScriptAnalyzer Test
+      
+      - name: Run PSScriptAnalyzer via Pester
         shell: pwsh
         run: |
-          ./Invoke-Pester.ps1
-          
+          ./Invoke-PSScriptAnalyzerViaPester.ps1
+      
       - name: Confirm output file present
         shell: pwsh
         run: |

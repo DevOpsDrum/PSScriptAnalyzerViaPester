@@ -1,0 +1,24 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+    "name": "pwsh and dotnet core on Ubuntu 20.04", // using Ubuntu 20.04 to match version commonly used for WSL
+    "dockerFile": "Dockerfile",
+    
+    // Uncomment the next line to run commands after the container is created.
+    "postCreateCommand": "pwsh -File .devcontainer/pwsh-setup.ps1",
+    
+    "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.powershell",
+        "ms-azure-devops.azure-pipelines",
+        "ms-dotnettools.csharp",
+        "DavidAnson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one",
+        "vitaliymaz.vscode-svg-previewer",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "ionutvmi.path-autocomplete",
+        "wayou.vscode-todo-highlight",
+        "iocave.customize-ui",
+        "zainchen.json"
+    ]
+}

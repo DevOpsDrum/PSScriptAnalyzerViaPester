@@ -1,0 +1,56 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "pwsh",
+    
+    "powershell.pester.codeLens": false,
+    "powershell.codeFormatting.preset": "OTBS",
+    "powershell.pester.useLegacyCodeLens": false,
+    "[powershell]": {
+    "editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "editor.formatOnSave": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": false
+    },
+
+    "gitlens.blame.ignoreWhitespace": true,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.views.branches.branches.layout": "list",
+
+    //customize UI used to keep actions-container buttons out of the way of clicking tabs of open files
+    "customizeUI.stylesheet": {
+        ".tabs-and-actions-container": {
+            "background-color": "inherit",
+        },
+        ".tabs-and-actions-container .editor-actions": {
+            "position": "absolute",
+            "top": "100%",
+            "right": "0px",
+            "height": "22px !important",
+            "z-index": "1",
+            "background-color": "inherit",
+        },
+        ".tabs-and-actions-container .editor-actions .action-item": {
+            "margin-right": "3px !important",
+        },
+        ".tabs-and-actions-container .editor-actions .action-item a": {
+            "font-size": "13px",
+        },
+        ".tabs-and-actions-container .editor-actions .action-item .codicon": {
+            "width": "13px",
+            "height": "13px",
+        },
+        ".tabs-and-actions-container .tab:last-child": {
+            "margin-right": "0 !important",
+        },
+        ".title.tabs.show-file-icons": {
+            "overflow": "unset !important",
+        }
+    }
+}
